@@ -1,2 +1,2 @@
-# arbuz.github.io
+# ArbuzoMetr
 счетчик спелости арбуза
