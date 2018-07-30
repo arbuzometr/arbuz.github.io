@@ -2,84 +2,94 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <!--[if lte IE 9]>
+    <!--[if lte IE 9]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
+    <!-- Add your site or application content here -->
+    <main class="layout clearfix">
+        <header class="header">
+            <h1 class="logo">АрбузоМетр</h1>
+            <div class="tagline">вычисляем спелость арбуза по весу и обхвату</div>
+        </header>
+        <section class="form">
+            <div class="melonform">
+                <div class="form-group">
+                    <div class="form-group-col">
+                        <label class="form-label">Длина окружности</label>
+                        <input type="number" id="circ" class="form-input" name="circ" value="0" min="0" step="1" /> см
+                    </div>
+                    <div class="form-group-col">
+                        <label class="form-label">Идеальный вес*</label>
+                        <input type="text" disabled="" id="result-weight-brief" class="form-input" name="" /> гр
+                    </div>
+                </div>
+                <p class="text-center">
+                    Если реальный вес меньше полученного числа, то арбуз считается спелым
+                    <!-- <br/>↓ -->
+                </p>
+                <div class="form-group">
+                    <div class="form-group-col">
+                        <label class="form-label">Введите фактический вес арбуза</label>
+                        <input type="number" id="weight" class="form-input form-input_medium" name="weight" value="0" min="0" step="10" /> гр
+                    </div>
+                    <!-- <div class="form-group-col">
+                        <label class="form-label">Идеальный обхват**</label>
+                        <input type="text" id="result-circ-brief" class="form-input" name="" /> см
+                    </div> -->
+                </div>
+            </div>
+            <p class="text-center">
+                <button id="button" class="form-button">Рассчитать</button>
+            </p> 
+            <p>
+                <div class="text-center" >
+                  <b id="result-ripeness"></b>
+                </div>
+                <p id="result-weight-full"></p>
+            </p>
+        </section>
+        <section>
+            <blockquote>L > 4.1*∛m
+                <br/> Длина окружности (обхват) спелого арбуза должна быть всегда больше кубического корня из его массы в граммах, умноженного на коэффицент 4,1</blockquote>
+            <blockquote>
+                m=L3*0.017
+            </blockquote>
+            <p>Другие признаки хорошего арбуза:</p>
+            <ul>
+                <li>Трещит при сжимании</li>
+                <li>Издает гулкий звук при постукивании. Осенью выбирать нужно только «звонкие» арбузы.</li>
+                <li>Желтое пятно на боку</li>
+                <li>Четко выраженный полосатый рисунок</li>
+                <li>Желтоватый сухой хвостик. Если хвостик зеленый – арбуз сорвали еще недозрелым</li>
+                <li>Без надрезов и трещин</li>
+                <li>Идеальный размер арбуза средний - 5-7кг</li>
+            </ul>
+             20 дней - срок хранения арбуза в сухом месте
 
-  <!-- Add your site or application content here -->
-  <main class="layout clearfix">
-
-    <header class="header">
-      <h1 class="logo">АрбузоМетр</h1>
-      <div class="tagline">математический способ определения спелости арбуза</div>
-    </header>
-
-    <section class="form">
-      <blockquote>Длина окружности (обхват) спелого арбуза должна быть всегда больше кубического корня из его массы в граммах, умноженного на коэффицент 4,1</blockquote>
-
-      <div class="melonform">
-        <div class="form-group">
-          <label class="melon-label">Вес арбуза, в граммах</label>
-          <input type="number" id="weight" class="melon-input" name="weight" value="0" min="0" step="100" />
-        </div>
-        <div class="form-group">
-          <label class="melon-label">Длина окружности, в см</label>
-          <input type="number" id="circ" class="melon-input" name="circ" value="0" min="0" step="1" />
-        </div>
-      </div>
-
-
-      <div id="errors"></div>
-      <p class="text-center">
-        <button  id="button" class="melon-button">Рассчитать</button>
-      </p>
-      <p>
-        <div class="text-center" id="resume"></div>
-        <div class="text-center" id="result"></div>
-      </p>
-      <!-- <div class="visual"></div> -->
-    </section>
-
-    <section>
-      <p>Другие признаки хорошего арбуза:</p>
-      <ul>
-        <li>Трещит при сжимании</li>
-        <li>Издает гулкий звук при постукивании</li>  
-        <li>Желтое пятно на боку</li>
-        <li>Четко выраженный полосатый рисунок</li>
-        <li>Желтоватый сухой хвостик. Если хвостик зеленый – арбуз сорвали еще недозрелым</li>
-        <li>Без надрезов и трещин</li>
-        <li>Идеальный размер арбуза средний - 5-7кг</li>
-      </ul>
-    </section>
-
-  </main>
-
-
-  <!-- <script src="js/vendor/modernizr-3.6.0.min.js"></script>
+        </section>
+    </main>
+    <!-- <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
 -->
-<script src="js/main.js"></script>
-
-<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-<!-- <script>
+    <script src="js/main.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- <script>
   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
   ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
 </script>
