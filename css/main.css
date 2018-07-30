@@ -198,13 +198,11 @@ blockquote {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    justify-content: center;
 }
 
 .form-group-col:first-child {
     margin-right: 5px;
-}
-.flex-center {
-    justify-content: center;
 }
 
 .form-label {
