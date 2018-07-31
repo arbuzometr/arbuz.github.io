@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
+    <title>Арбузометр</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="manifest" href="site.webmanifest">
@@ -20,55 +20,68 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
     <!-- Add your site or application content here -->
+    <div class="bg"></div>
     <main class="layout clearfix">
+
         <header class="header">
-            <h1 class="logo">АрбузоМетр</h1>
-            <div class="tagline">вычисляем спелость арбуза по весу и обхвату</div>
+            <h1 class="logo"><i class="icon-melon"></i>АрбузоМетр</h1>
+            <div class="tagline">математический способ определения спелости арбуза</div>
         </header>
         <section class="form">
-            <div class="melonform">
+                <h3>По длине окружности</h3>
                 <div class="form-group">
                     <div class="form-group-col">
-                        <label class="form-label">Длина окружности</label>
-                        <input type="number" id="circ" class="form-input" name="circ" value="0" min="0" step="1" /> см
+                        <label class="form-label">Введите длину окружности:</label>
+                        <input type="number" id="input-circumference" class="form-input" name="circ" value="" min="0" step="1" /> см
                     </div>
                     <div class="form-group-col">
-                        <label class="form-label">Идеальный вес*</label>
-                        <input type="text" disabled="" id="result-weight-brief" class="form-input" name="" /> гр
+                        <label class="form-label">Идеальный вес меньше или равен:</label>
+                        <input type="text" disabled="" id="result-weight" class="form-input" name="" /> г
+                        <div>
+                            <small id="result-weight-max"></small>
+                        </div>
                     </div>
                 </div>
-                <p class="text-center">
-                    Если реальный вес меньше полученного числа, то арбуз считается спелым
-                    <!-- <br/>↓ -->
+                <p>
+                    Если реальный вес меньше полученного числа, то арбуз считается спелым.
                 </p>
-                <div class="form-group text-center">
+                <br>    
+                <h3>По весу</h3>
+                <div class="form-group">
                     <div class="form-group-col">
-                        <label class="form-label">Введите фактический вес арбуза</label>
-                        <input type="number" id="weight" class="form-input form-input_medium" name="weight" value="0" min="0" step="10" /> гр
+                        <label class="form-label form-label_melonweight">Введите вес арбуза:</label>
+                        <input type="number" id="input-weight" class="form-input" name="weight" value="" min="0" step="100" /> г
                     </div>
-                    <!-- <div class="form-group-col">
-                        <label class="form-label">Идеальный обхват**</label>
-                        <input type="text" id="result-circ-brief" class="form-input" name="" /> см
-                    </div> -->
+                    <div class="form-group-col">
+                        <label class="form-label">Идеальный обхват больше или равен:</label>
+                        <input type="text" disabled="" id="result-circ" class="form-input" name="" /> см
+                    </div>
                 </div>
-            </div>
-            <p class="text-center">
-                <button id="button" class="form-button">Рассчитать</button>
-            </p> 
-            <p>
-                <div class="text-center" >
-                  <b id="result-ripeness"></b>
+                <!--  <div class="form-group text-center">
+                    <button id="button" class="form-button">Рассчитать</button>
+                </div> -->
+            <!-- <p>
+                <div class="text-center">
+                    <b id="result-ripeness"></b>
                 </div>
                 <p id="result-weight-full"></p>
-            </p>
+            </p> -->
         </section>
         <section>
+            <h3>Рассчеты</h3>
+            <p><b>Формула №1.</b> Зная длину окружности, можем рассчитать оптимальный вес арбуза:</p>
+            <blockquote>
+                m=L<sup>3</sup>*0.017,
+                <footer>где m - вес, а L - длина окружности</footer>
+            </blockquote>
+            <p>
+                *Опытным путем было выяснено, что если арбуз легче более чем на 7% от идеального рассчетного веса, то скорее всего он переспел.
+            </p>
+            <br/>
+            <p><b>Формула №2.</b> Зная вес, рассчитаем максимальный обхват арбуза:</p>
             <blockquote>L > 4.1*∛m
                 <br/> Длина окружности (обхват) спелого арбуза должна быть всегда больше кубического корня из его массы в граммах, умноженного на коэффицент 4,1</blockquote>
-            <blockquote>
-                m=L3*0.017
-            </blockquote>
-            <p>Другие признаки хорошего арбуза:</p>
+            <h3>Признаки спелого арбуза:</h3>
             <ul>
                 <li>Трещит при сжимании</li>
                 <li>Издает гулкий звук при постукивании. Осенью выбирать нужно только «звонкие» арбузы.</li>
@@ -78,22 +91,10 @@
                 <li>Без надрезов и трещин</li>
                 <li>Идеальный размер арбуза средний - 5-7кг</li>
             </ul>
-             20 дней - срок хранения арбуза в сухом месте
-
+            
         </section>
     </main>
-    <!-- <script src="js/vendor/modernizr-3.6.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
--->
     <script src="js/main.js"></script>
-    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <!-- <script>
-  window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-  ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
-</script>
-<script src="https://www.google-analytics.com/analytics.js" async defer></script> -->
 </body>
 
 </html>
