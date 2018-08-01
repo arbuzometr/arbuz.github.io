@@ -22,42 +22,61 @@
     <!-- Add your site or application content here -->
     <div class="bg"></div>
     <main class="layout clearfix">
-
         <header class="header">
             <h1 class="logo"><i class="icon-melon"></i>АрбузоМетр</h1>
             <div class="tagline">математический способ определения спелости арбуза</div>
         </header>
         <section class="form">
-                <h3>По длине окружности</h3>
-                <div class="form-group">
-                    <div class="form-group-col">
-                        <label class="form-label">Введите длину окружности:</label>
-                        <input type="number" id="input-circumference" class="form-input" name="circ" value="" min="0" step="1" /> см
+            <h3>Введите длину окружности</h3>
+            <div class="form-group">
+                <div class="form-group-col">
+                    <div class="form-label-wrap">
+                        <i class="icon-circ icon-circ_horizontal"></i>
+                        <label class="form-label">по горизонтали</label>
                     </div>
-                    <div class="form-group-col">
-                        <label class="form-label">Идеальный вес меньше или равен:</label>
-                        <input type="text" disabled="" id="result-weight" class="form-input" name="" /> г
-                        <div>
-                            <small id="result-weight-max"></small>
-                        </div>
-                    </div>
+                    <input type="number" id="input-circumference-horizontal" class="form-input" name="circ-hor" value="" min="0" step="1" /> см
                 </div>
-                <p>
-                    Если реальный вес меньше полученного числа, то арбуз считается спелым.
-                </p>
-                <br>    
-                <h3>По весу</h3>
-                <div class="form-group">
-                    <div class="form-group-col">
-                        <label class="form-label form-label_melonweight">Введите вес арбуза:</label>
-                        <input type="number" id="input-weight" class="form-input" name="weight" value="" min="0" step="100" /> г
+                <div class="form-group-col">
+                    <div class="form-label-wrap">
+                        <i class="icon-circ icon-circ_vertical"></i>
+                        <label class="form-label">по вертикали</label>
                     </div>
-                    <div class="form-group-col">
-                        <label class="form-label">Идеальный обхват больше или равен:</label>
-                        <input type="text" disabled="" id="result-circ" class="form-input" name="" /> см
-                    </div>
+                    <input type="number" id="input-circumference-vertical" class="form-input" name="circ-ver" value="" min="0" step="1" /> см
                 </div>
-                <!--  <div class="form-group text-center">
+            </div>
+            <div>
+                <small><b>Спелый арбуз должен весить менее</b></small>
+                <input type="text" disabled="" id="result-weight" class="form-input" name="" /> кг
+                <!-- <span id="result-weight"></span> кг -->
+                <div>
+                    <small id="result-weight-max"></small>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="form-group-col">
+                    <label class="form-label">Введите фактический вес арбуза</label>
+                    <input type="number" id="input-real-weight" class="form-input" name="" step="0.1" /> кг
+                </div>
+            </div>
+            <p class="text-center">
+                <span id="ripeness-percent" class="ripeness-percent"></span>
+                <div id="ripeness-resume" class="text-center"></div>
+            </p>
+            <!-- <p><small>Если реальный вес меньше полученного числа, то арбуз считается спелым.</small></p> -->
+            <!-- <br>
+            <h3>По весу</h3>
+            <div class="form-group">
+                <div class="form-group-col">
+                    <label class="form-label form-label_melonweight">Введите вес арбуза:</label>
+                    <input type="number" id="input-weight" class="form-input" name="weight" value="" min="0" step="0.1" /> кг
+                </div>
+                <div class="form-group-col">
+                    <label class="form-label">Идеальный обхват больше или равен:</label>
+                    <input type="text" disabled="" id="result-circ" class="form-input" name="" /> см
+                </div>
+            </div> -->
+            <!--  <div class="form-group text-center">
                     <button id="button" class="form-button">Рассчитать</button>
                 </div> -->
             <!-- <p>
@@ -67,7 +86,7 @@
                 <p id="result-weight-full"></p>
             </p> -->
         </section>
-        <section>
+        <!-- <section>
             <h3>Рассчеты</h3>
             <p><b>Формула №1.</b> Зная длину окружности, можем рассчитать оптимальный вес арбуза:</p>
             <blockquote>
@@ -91,8 +110,7 @@
                 <li>Без надрезов и трещин</li>
                 <li>Идеальный размер арбуза средний - 5-7кг</li>
             </ul>
-            
-        </section>
+        </section> -->
     </main>
     <script src="js/main.js"></script>
 </body>
