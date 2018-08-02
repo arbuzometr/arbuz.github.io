@@ -14,11 +14,9 @@
 
 html {
     color: #222;
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.4;
 }
-
-
 
 /*
  * Remove text-shadow in selection highlight:
@@ -39,9 +37,6 @@ html {
     background: #b3d4fc;
     text-shadow: none;
 }
-
-
-
 /*
  * A better looking default horizontal rule
  */
@@ -54,16 +49,11 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
-
-
-
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-
 audio,
 canvas,
 iframe,
@@ -72,23 +62,14 @@ svg,
 video {
     vertical-align: middle;
 }
-
-
-
-
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
-
-
-
-
 /*
  * Allow only vertical resizing of textareas.
  */
@@ -96,10 +77,6 @@ fieldset {
 textarea {
     resize: vertical;
 }
-
-
-
-
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -113,11 +90,10 @@ textarea {
 
 
 
-
-
 /* ==========================================================================
-   Author's custom styles
+   Custom styles
    ========================================================================== */
+
 
 html,
 body {
@@ -130,17 +106,21 @@ body {
     /*background-color: #FC7D6C;*/
     background-color: #FFB686;
     color: black;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font: 18px/1.4 'Open Sans Condensed', sans-serif;
 }
 
-.text-center {
-    text-align: center;
+.calculations {
+    font-size: 24px;
 }
 
 .layout {
     padding: 0 5%;
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
+}
+
+.page-inner .layout {
+    max-width: 700px;
 }
 
 @media (min-width:650px) {
@@ -150,7 +130,8 @@ body {
 }
 
 .bg {
-    background-image: linear-gradient(45deg, #F3E02A, #E8B305);
+    /*background-image: linear-gradient(45deg, #F3E02A, #E8B305);*/
+    background-color: #F3E02A;
     height: 30px;
 }
 
@@ -162,11 +143,6 @@ body {
 }
 
 
-
-
-
-
-
 /* Header */
 
 .header {
@@ -174,7 +150,7 @@ body {
 }
 
 .logo {
-    font: normal 2.9em 'Amatic SC', cursive;
+    font: normal 70px 'Amatic SC', cursive;
     text-align: center;
     margin-top: .2em;
     margin-bottom: 0;
@@ -182,7 +158,7 @@ body {
 
 .tagline {
     font-family: 'Amatic SC', cursive;
-    font-size: 1.4em;
+    font-size: 33.6px;
     text-align: center;
 }
 
@@ -210,12 +186,10 @@ body {
 }
 
 
-
-
-
-
-
-/* Content */
+/* Content common*/
+.text-center {
+    text-align: center;
+}
 
 ul li {
     list-style: none;
@@ -226,12 +200,15 @@ ul li:before {
     float: left;
     margin-left: -1.2em;
 }
-
-section {
-    margin-bottom: 4em;
+a {
+    color: #000;
 }
-
-
+.font-small {
+    font-size: 18px; 
+}
+.font-xsmall {
+    font-size: 16px; 
+}
 blockquote {
     border: 1px solid black;
     padding: 5%;
@@ -250,56 +227,57 @@ blockquote {
     }
 }
 
+/* Content */
+
+section {
+    margin-bottom: 4em;
+}
+
 .form-group {
+    margin-bottom: 1em;
+}
+
+.form-group_flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     justify-content: center;
-    margin-bottom: 1em;
 }
 
-.form-group-col:first-child {
-    margin-right: 5px;
+.form-group_flex__col:nth-of-type(2) {
+    margin-left: 5px;
 }
 
 .form-label-wrap {
-    width: calc(100% - 1.2rem);
+    width: calc(100% - .7em);
     text-align: center;
 }
 
 .form-label {
     display: block;
-    margin-bottom: 10px;
-    font-size: .75rem;
+    margin-bottom: .6em;
     font-weight: bold;
 }
 
 @media screen and (max-width: 509px) {
     .form-label_melonweight {
-        margin-top: 1rem;
+        margin-top: 1em;
     }
 }
 
 .form-input {
-    width: calc(100% - 1.2rem);
+    width: calc(100% - .7em);
     border: 0;
     padding: 10px 10px;
-    font-size: 1.6rem;
+    font-size: 38px;
     font-weight: bold;
     box-sizing: border-box;
     text-align: center;
 }
 
-.form-button {
-    position: relative;
-    background-color: rgba(81, 188, 109, 0.8);
-    border: 0;
-    padding: 20px 100px;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.5s;
+.measure {
+    font-size: 1.4em;
 }
 
 .icon-circ {
@@ -336,6 +314,35 @@ blockquote {
     border-right: 2px dashed black;
     border-left: 2px dashed grey;
 }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table, .table th, .table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.table td {
+    padding: 3px;
+}
+
+
+.footer {
+    padding: 20px 0;
+}
+
+/*.form-button {
+    position: relative;
+    background-color: rgba(81, 188, 109, 0.8);
+    border: 0;
+    padding: 20px 100px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.5s;
+}
+*/
 
 
 /*#result-weight {
@@ -348,21 +355,24 @@ blockquote {
     box-sizing: border-box;
     font-size: 1.6rem;
     font-weight: bold; 
-}*/
+    }*/
+
 .ripeness-percent {
     font-size: 1.6rem;
     font-weight: bold;
 }
+
+
 /*.result-wrap {
     border-left: 5px solid green;
     padding: 20px 0;
-}*/
+    }*/
+
 .result {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: .75rem;
     color: #fff;
-    border-radius: 10px;
+    padding: 5px 0;
+    /*font-size: .75rem;*/
+    /*border-radius: 10px;*/
 }
 
 .result_ripe {
@@ -378,6 +388,7 @@ blockquote {
 }
 
 
+
 /* ==========================================================================
 
    Helper classes
@@ -391,6 +402,7 @@ blockquote {
 .hidden {
     display: none !important;
 }
+
 
 
 
@@ -434,6 +446,7 @@ blockquote {
 
 
 
+
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
@@ -463,6 +476,7 @@ blockquote {
 
 
 
+
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -470,6 +484,7 @@ blockquote {
 .invisible {
     visibility: hidden;
 }
+
 
 
 
@@ -519,6 +534,7 @@ blockquote {
 
 
 
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -536,6 +552,7 @@ blockquote {
 (min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
+
 
 
 
