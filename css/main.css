@@ -14,7 +14,7 @@
 
 html {
     color: #222;
-    font-size: 1em;
+    font-size: 16px;
     line-height: 1.4;
 }
 
@@ -106,7 +106,8 @@ body {
     /*background-color: #FC7D6C;*/
     background-color: #FFB686;
     color: black;
-    font: 18px/1.4 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 1.4;
 }
 
 .calculations {
@@ -150,15 +151,15 @@ body {
 }
 
 .logo {
-    font: normal 70px 'Amatic SC', cursive;
+    font: normal 4.375rem 'Amatic SC', cursive;
     text-align: center;
-    margin-top: .2em;
+    margin-top: .5em;
     margin-bottom: 0;
 }
 
 .tagline {
     font-family: 'Amatic SC', cursive;
-    font-size: 33.6px;
+    font-size: 2.1rem;
     text-align: center;
 }
 
