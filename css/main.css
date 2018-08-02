@@ -190,6 +190,9 @@ body {
 .text-center {
     text-align: center;
 }
+.text-left {
+    text-align: left;
+}
 
 ul li {
     list-style: none;
@@ -204,11 +207,9 @@ a {
     color: #000;
 }
 .font-small {
-    font-size: 18px; 
-}
-.font-xsmall {
     font-size: 16px; 
 }
+
 blockquote {
     border: 1px solid black;
     padding: 5%;
@@ -326,7 +327,6 @@ section {
 .table td {
     padding: 3px;
 }
-
 
 .footer {
     padding: 20px 0;
