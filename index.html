@@ -1,15 +1,14 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="ru-RU">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Арбузометр</title>
-    <meta name="description" content="">
+    <meta name="description" content="Вычисляем спелость арбуза по его обхвату и весу">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -19,49 +18,66 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
     <div class="bg"></div>
-    <div class="layout clearfix">
+    <div class="layout layout_main clearfix">
         <header class="header">
             <h1 class="logo">АрбузоМетр</h1>
             <div class="tagline">математический способ определения спелости арбуза</div>
         </header>
         <main>
             <section class="form">
-                <h3>Введите длину окружности:</h3>
+                <h2>Введите длину окружности:</h2>
                 <div class="form-group form-group_flex">
                     <div class="form-group_flex__col">
                         <div class="form-label-wrap">
                             <i class="icon-circ icon-circ_horizontal"></i>
-                            <label class="form-label">по горизонтали</label>
+                            <label class="form-label" for="js-circumference-horizontal">по горизонтали</label>
                         </div>
-                        <input type="number" id="input-circumference-horizontal" class="form-input" name="circ-hor" value="" min="0" step="1" />
+                        <input type="number" id="js-circumference-horizontal" class="form-input" name="circumference-horizontal" value="" min="0" step="1" />
                         <span class="measure">см</span>
                     </div>
                     <div class="form-group_flex__col">
                         <div class="form-label-wrap">
                             <i class="icon-circ icon-circ_vertical"></i>
-                            <label class="form-label">по вертикали</label>
+                            <label class="form-label" for="js-circumference-vertical">по вертикали</label>
                         </div>
-                        <input type="number" id="input-circumference-vertical" class="form-input" name="circ-ver" value="" min="0" step="1" />
+                        <input type="number" id="js-circumference-vertical" class="form-input" name="circumference-vertical" value="" min="0" step="1" />
                         <span class="measure">см</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Спелый арбуз должен весить менее</label>
-                    <input type="text" disabled="" id="result-weight" class="form-input" name="" />
+                    <label class="form-label" for="js-ideal-weight">Спелый арбуз должен весить менее</label>
+                    <input type="text" disabled="" id="js-ideal-weight" class="form-input" name="ideal-weight" />
                     <span class="measure">кг</span>
                     <div>
-                        <span id="result-weight-max"></span>
+                        <span id="js-ideal-weight-max"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Введите фактический вес арбуза</label>
-                    <input type="number" id="input-real-weight" class="form-input" name="" step="0.1" />
+                    <label class="form-label" for="js-real-weight">Введите фактический вес арбуза</label>
+                    <input type="number" id="js-real-weight" class="form-input" name="input-real-weight" step="0.1" />
                     <span class="measure">кг</span>
                 </div>
-                <p class="text-center">
-                    <span id="ripeness-percent" class="ripeness-percent"></span>
-                    <div id="ripeness-resume" class="text-center"></div>
-                </p>
+                <div class="text-center">
+                    <span id="js-ripeness-percent" class="ripeness-percent"></span>
+                    <div id="js-ripeness-resume" class="text-center"></div>
+                </div>
+                <div class="ripeness-visual invisible">
+                    <div class="ripeness-visual__marks">
+                        <div>&nbsp;80%</div>
+                        <div>100%</div>
+                        <div>120%</div>
+                    </div>
+                    <input type="range" min="80" max="120" disabled="" value="" class="ripeness-visual__slider" id="js-ripeness-range">
+                </div>
+                
+                <p class="font-large">
+                    <b><100%</b> - арбуз неспелый
+                    <br>
+                    <b>100-105%</b> - оптимальная спелость
+                    <br>
+                    <b>105-110%</b> - возможно, арбуз переспел
+                    <br>
+                    <b>>110%</b> - скорее всего, арбуз переспел</p>
             </section>
         </main>
         <footer class="footer">*<a href="calculations.html" class="font-small">рассчеты и дневник наблюдений</a></footer>

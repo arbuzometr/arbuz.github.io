@@ -11,12 +11,13 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300');
 
 html {
-    color: #222;
-    font-size: 16px;
-    line-height: 1.4;
+    color: #000;
+    font: 17px/1.4 'Open Sans Condensed', sans-serif;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -37,6 +38,8 @@ html {
     background: #b3d4fc;
     text-shadow: none;
 }
+
+
 /*
  * A better looking default horizontal rule
  */
@@ -49,11 +52,14 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+
+
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
+
 audio,
 canvas,
 iframe,
@@ -62,14 +68,19 @@ svg,
 video {
     vertical-align: middle;
 }
+
+
 /*
  * Remove default fieldset styles.
  */
+
 fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
+
+
 /*
  * Allow only vertical resizing of textareas.
  */
@@ -77,6 +88,8 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
+
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -90,10 +103,10 @@ textarea {
 
 
 
+
 /* ==========================================================================
    Custom styles
    ========================================================================== */
-
 
 html,
 body {
@@ -101,23 +114,78 @@ body {
     padding: 0;
     margin: 0;
 }
-
 body {
-    /*background-color: #FC7D6C;*/
     background-color: #FFB686;
-    color: black;
-    font-family: 'Open Sans Condensed', sans-serif;
     line-height: 1.4;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li:before {
+    content: "\2014\a0";
+    float: left;
+    margin-left: -1.2em;
+}
+
+a {
+    color: #000;
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+.font-small {
+    font-size: 1rem;
+}
+.font-large {
+    font-size: 1.2rem;
+}
+
+blockquote {
+    border: 1px solid black;
+    padding: 5%;
+    margin: 0 auto 2em;
+    font-size: .8em;
+    text-align: center;
+}
+
+@media (min-width: 650px) {
+    blockquote {
+        padding: 3%;
+        font-size: .9em;
+        width: 75%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+
+
+/*  */
+
 .calculations {
-    font-size: 24px;
+    font-size: 1.4rem;
 }
 
 .layout {
     padding: 0 5%;
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+}
+.layout_main {
+    max-width: 500px;
 }
 
 .page-inner .layout {
@@ -155,6 +223,9 @@ body {
     text-align: center;
     margin-top: .5em;
     margin-bottom: 0;
+    text-align: center;
+    display: block;
+    text-decoration: none;
 }
 
 .tagline {
@@ -187,47 +258,7 @@ body {
 }
 
 
-/* Content common*/
-.text-center {
-    text-align: center;
-}
-.text-left {
-    text-align: left;
-}
 
-ul li {
-    list-style: none;
-}
-
-ul li:before {
-    content: "\2014\a0";
-    float: left;
-    margin-left: -1.2em;
-}
-a {
-    color: #000;
-}
-.font-small {
-    font-size: 16px; 
-}
-
-blockquote {
-    border: 1px solid black;
-    padding: 5%;
-    margin: 0 auto 2em;
-    font-size: .8em;
-    text-align: center;
-}
-
-@media (min-width: 650px) {
-    blockquote {
-        padding: 3%;
-        font-size: .9em;
-        width: 75%;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-}
 
 /* Content */
 
@@ -316,86 +347,78 @@ section {
     border-right: 2px dashed black;
     border-left: 2px dashed grey;
 }
-.table-wrap {
-    width: 100%;
-    overflow-x: auto;
-}
-
-.table, .table th, .table td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-.table td {
-    padding: 3px;
-}
-
-.footer {
-    padding: 20px 0;
-}
-
-/*.form-button {
-    position: relative;
-    background-color: rgba(81, 188, 109, 0.8);
-    border: 0;
-    padding: 20px 100px;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.5s;
-}
-*/
-
-
-/*#result-weight {
-    width: calc(100% - 1.6rem);
-    border-bottom: 2px solid black;
-    padding: 10px;
-    display: inline-block;
-    min-width: 50px;
-    height: 75px;
-    box-sizing: border-box;
-    font-size: 1.6rem;
-    font-weight: bold; 
-    }*/
 
 .ripeness-percent {
     font-size: 1.6rem;
     font-weight: bold;
 }
+.ripeness-visual {
+    margin: 2em 0;
+}
+.ripeness-visual__marks {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.ripeness-visual__slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 100%; 
+    height: 30px;
+    background: linear-gradient(to right, #DEE5A5, #FED3A2 32%, #FE583F 53%, #E70003 75%, #420200);
+    outline: none;
+}
 
 
-/*.result-wrap {
-    border-left: 5px solid green;
+.ripeness-visual__slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #000;
+    -webkit-border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
+    border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
+    transform: rotateZ(-45deg);
+    margin-top: 30px;
+}
+
+.ripeness-visual__slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #000;
+    -webkit-border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
+    border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
+    transform: rotateZ(-45deg);
+}
+
+
+/* Calculations page */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table,
+.table th,
+.table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 3px;
+}
+
+/* Footer */
+.footer {
     padding: 20px 0;
-    }*/
-
-.result {
-    color: #fff;
-    padding: 5px 0;
-    /*font-size: .75rem;*/
-    /*border-radius: 10px;*/
 }
-
-.result_ripe {
-    background-color: green
-}
-
-.result_notripe {
-    background-color: red;
-}
-
-.result_overripe {
-    background-color: #B70101;
-}
-
 
 
 /* ==========================================================================
-
    Helper classes
    ========================================================================== */
-
-
 /*
  * Hide visually and from screen readers
  */
@@ -403,14 +426,6 @@ section {
 .hidden {
     display: none !important;
 }
-
-
-
-
-
-
-
-
 
 
 /*
@@ -435,19 +450,6 @@ section {
     /* 1 */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
@@ -465,19 +467,6 @@ section {
     white-space: inherit;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -486,91 +475,22 @@ section {
     visibility: hidden;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
  * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
  */
 
 .clearfix:before,
 .clearfix:after {
     content: " ";
-    /* 1 */
     display: table;
-    /* 2 */
 }
 
 .clearfix:after {
     clear: both;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
-
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-(-webkit-min-device-pixel-ratio: 1.25),
-(-o-min-device-pixel-ratio: 5/4),
-(min-resolution: 1.25dppx),
-(min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Print styles.
-   Inlined to avoid the additional HTTP request:
-   https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
 @media print {
@@ -579,7 +499,6 @@ section {
     *:after {
         background: transparent !important;
         color: #000 !important;
-        /* Black prints faster */
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
@@ -639,5 +558,8 @@ section {
     h2,
     h3 {
         page-break-after: avoid;
+    }
+    .form-input {
+        border: 1px solid #000;
     }
 }
