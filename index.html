@@ -18,14 +18,14 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
     <div class="bg"></div>
-    <div class="layout layout_main clearfix">
+    <div class="layout">
         <header class="header">
-            <h1 class="logo">АрбузоМетр</h1>
-            <div class="tagline">математический способ определения спелости арбуза</div>
+            <h1 class="logo">арбуз.info</h1>
+            <div class="tagline">определяем спелость арбуза по обхвату и весу</div>
         </header>
         <main>
-            <section class="form">
-                <h2>Введите длину окружности:</h2>
+            <section>
+                <p><b>Введите длину окружности:</b></p>
                 <div class="form-group form-group_flex">
                     <div class="form-group_flex__col">
                         <div class="form-label-wrap">
@@ -45,39 +45,37 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="js-ideal-weight">Спелый арбуз должен весить менее</label>
-                    <input type="text" disabled="" id="js-ideal-weight" class="form-input" name="ideal-weight" />
+                    <label class="form-label" for="js-ideal-mass">Спелый арбуз должен весить менее</label>
+                    <input type="text" disabled="" id="js-ideal-mass" class="form-input" name="ideal-mass" />
                     <span class="measure">кг</span>
                     <div>
-                        <span id="js-ideal-weight-max"></span>
+                        <span id="js-ideal-mass-max"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="js-real-weight">Введите фактический вес арбуза</label>
-                    <input type="number" id="js-real-weight" class="form-input" name="input-real-weight" step="0.1" />
+                    <label class="form-label" for="js-mass">Введите фактический вес арбуза</label>
+                    <input type="number" id="js-mass" class="form-input" name="mass" step="0.1" />
                     <span class="measure">кг</span>
                 </div>
                 <div class="text-center">
                     <span id="js-ripeness-percent" class="ripeness-percent"></span>
                     <div id="js-ripeness-resume" class="text-center"></div>
                 </div>
-                <div class="ripeness-visual invisible">
-                    <div class="ripeness-visual__marks">
+                <div class="visual invisible">
+                    <div class="visual__marks">
+                        <div>неспелый</div>
+                        <div>спелый</div>
+                        <div>переспелый</div>
+                    </div>
+                    <div class="visual__marks">
                         <div>&nbsp;80%</div>
                         <div>100%</div>
                         <div>120%</div>
                     </div>
-                    <input type="range" min="80" max="120" disabled="" value="" class="ripeness-visual__slider" id="js-ripeness-range">
+                    <div class="visual__gradient"></div>
+                    <input type="range" min="80" max="120" disabled="" value="" class="visual__slider" id="js-ripeness-range">
                 </div>
-                
-                <p class="font-large">
-                    <b><100%</b> - арбуз неспелый
-                    <br>
-                    <b>100-105%</b> - оптимальная спелость
-                    <br>
-                    <b>105-110%</b> - возможно, арбуз переспел
-                    <br>
-                    <b>>110%</b> - скорее всего, арбуз переспел</p>
+              <!--  -->
             </section>
         </main>
         <footer class="footer">*<a href="calculations.html" class="font-small">рассчеты и дневник наблюдений</a></footer>

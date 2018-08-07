@@ -1,97 +1,113 @@
-    <!doctype html>
-    <html class="no-js" lang="ru-RU">
+<!doctype html>
+<html class="no-js" lang="ru-RU">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Рассчеты и таблица наблюдений - Арбузометр</title>
-        <meta name="description" content="Вычисляем спелость арбуза по его обхвату и весу">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Рассчеты и таблица наблюдений - Арбузометр</title>
+    <meta name="description" content="Вычисляем спелость арбуза по его обхвату и весу">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
 
-    <body>
-        <!--[if lte IE 9]>
+<body>
+    <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
-        <div class="bg"></div>
-        <div class="layout clearfix">
-            <header class="header">
-                <a class="logo" href="index.html">АрбузоМетр</a>
-                <div class="tagline">математический способ определения спелости арбуза</div>
-            </header>
-            <main>
-                <section class="calculations">
-                    <h2>Рассчеты</h2>
-                    <p><b>Формула №1.</b> Зная длину окружности, можем рассчитать оптимальный вес арбуза:</p>
-                    <blockquote>
-                        m=L<sup>3</sup>*0.017,
-                        <footer>где m &mdash; вес, L &mdash; длина окружности</footer>
-                    </blockquote>
-                    <p><b>Формула №2.</b> Зная вес, рассчитаем максимальный обхват арбуза:</p>
-                    <blockquote>L > 4.1*∛m
-                        <br/> Длина окружности (обхват) спелого арбуза должна быть всегда больше кубического корня из его массы в граммах, умноженного на коэффицент 4,1</blockquote>
-                    <h2>Таблица наблюдений</h2>
-                    <table class="table font-small text-center">
-                        <tr>
-                            <th>Дата</th>
-                            <th>Средн. обхват, см</th>
-                            <th>Рассч. вес, кг</th>
-                            <th>Факт. вес, кг</th>
-                            <th>Индекс спелости</th>
-                            <th>Факт. спелость</th>
-                        </tr>
-                        <tr>
-                            <td>июль</td>
-                            <td>81</td>
-                            <td>9.034</td>
-                            <td>9.067</td>
-                            <td>100%</td>
-                            <td class="text-left">
-                                <p>Спелый, сочный, не сахаристый</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>30 июля</td>
-                            <td>68.5</td>
-                            <td>5.464</td>
-                            <td>5.200</td>
-                            <td>105%</td>
-                            <td class="text-left">Очень спелый, очень сахаристый, на грани переспелости</td>
-                        </tr>
-                        <tr>
-                            <td>1 авг.</td>
-                            <td>80.5</td>
-                            <td>8.868</td>
-                            <td>8.160</td>
-                            <td>108%</td>
-                            <td class="text-left">Спелый, в меру сахаристый, с очень толстой фигурной коркой</td>
-                        </tr>
-                        <tr>
-                            <td>2 авг.</td>
-                            <td>72</td>
-                            <td>6.345</td>
-                            <td>6.245</td>
-                            <td>102%</td>
-                            <td class="text-left">Хороший, сочный, не сахаристый, у краев светло-розовый</td>
-                        </tr>
-                    </table>
-                    <h2>Другие признаки спелого арбуза:</h2>
-                    <ul>
-                        <li>Трещит при сжимании</li>
-                        <li>Издает гулкий звук при постукивании. Осенью выбирать нужно только «звонкие» арбузы.</li>
-                        <li>Желтое пятно на боку</li>
-                        <li>Четко выраженный полосатый рисунок</li>
-                        <li>Желтоватый сухой хвостик. Если хвостик зеленый – арбуз сорвали еще недозрелым</li>
-                        <li>Без надрезов и трещин</li>
-                        <li>Идеальный размер арбуза средний - 5-7кг</li>
-                    </ul>
-                </section>
-            </main>
-        </div>
-    </body>
+    <div class="bg"></div>
+    <div class="layout clearfix">
+        <header class="header">
+            <a class="logo" href="index.html">арбуз.info</a>
+            <div class="tagline">определяем спелость арбуза по обхвату и весу</div>
+        </header>
+        <main>
+            <section class="calculations">
+                <h2>Рассчеты</h2>
+                <p><b>Формула №1.</b> Зная длину окружности, можем рассчитать оптимальный вес арбуза:</p>
+                <blockquote>
+                    m=L<sup>3</sup>*0.017,
+                    <footer>где m &mdash; вес, L &mdash; длина окружности</footer>
+                </blockquote>
+                <p><b>Формула №2.</b> Зная вес, рассчитаем максимальный обхват арбуза:</p>
+                <blockquote>L > 4.1*∛m
+                    <br/> Длина окружности (обхват) спелого арбуза должна быть всегда больше кубического корня из его массы в граммах, умноженного на коэффицент 4,1</blockquote>
 
-    </html>
+                <h2>Таблица наблюдений</h2>
+                <table class="table font-small text-center">
+                    <tr>
+                        <th>Дата</th>
+                        <th>Средн. обхват, см</th>
+                        <th>Рассч. вес, кг</th>
+                        <th>Факт. вес, кг</th>
+                        <th>Индекс спелости</th>
+                        <th>Результаты</th>
+                    </tr>
+                    <tr>
+                        <td>июль</td>
+                        <td>81</td>
+                        <td>9.034</td>
+                        <td>9.067</td>
+                        <td>100%</td>
+                        <td>Спелый, сочный, не сахаристый</td>
+                    </tr>
+                    <tr>
+                        <td>30 июля</td>
+                        <td>68.5</td>
+                        <td>5.464</td>
+                        <td>5.200</td>
+                        <td>105%</td>
+                        <td>Очень спелый, очень сахаристый, на грани</td>
+                    </tr>
+                    <tr>
+                        <td>1 авг.</td>
+                        <td>80.5</td>
+                        <td>8.868</td>
+                        <td>8.160</td>
+                        <td>108%</td>
+                        <td>Спелый, в меру сахаристый, очень толстая фигурная корка</td>
+                    </tr>
+                    <tr>
+                        <td>2 авг.</td>
+                        <td>72</td>
+                        <td>6.345</td>
+                        <td>6.245</td>
+                        <td>102%</td>
+                        <td>Хороший, сочный, не сахаристый, у краев светло-розовый</td>
+                    </tr>
+                    <tr>
+                        <td>4 авг.</td>
+                        <td>87</td>
+                        <td>11.195</td>
+                        <td>10.69</td>
+                        <td>105%</td>
+                        <td>Спелый, сладкий, тонкая корка</td>
+                    </tr>
+                </table>
+                <h2>Выводы</h2>
+                 <p>
+                    <b><100%</b> - арбуз неспелый
+                    <br>
+                    <b>100-105%</b> - оптимальная спелость
+                    <br>
+                    <b>105-110%</b> - возможно, арбуз переспел
+                    <br>
+                    <b>>110%</b> - скорее всего, арбуз переспел</p>
+                <h2>Другие признаки спелого арбуза:</h2>
+                <ul>
+                    <li>Трещит при сжимании</li>
+                    <li>Издает гулкий звук при постукивании. Осенью выбирать нужно только «звонкие» арбузы.</li>
+                    <li>Желтое пятно на боку</li>
+                    <li>Четко выраженный полосатый рисунок</li>
+                    <li>Желтоватый сухой хвостик. Если хвостик зеленый – арбуз сорвали еще недозрелым</li>
+                    <li>Без надрезов и трещин</li>
+                    <li>Идеальный размер арбуза средний - 5-7кг</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
