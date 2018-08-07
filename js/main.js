@@ -61,7 +61,8 @@ function getIdealMassMax(m) {
 }
 
 function getRipenessByCircumferencePercent(m, idealm) {
-    return Math.round(100 - (m - idealm) / (idealm / 100));
+    var percent = Math.round(100 - (m - idealm) / (idealm / 100));
+    return percent > 0 ? percent : 0 ;
 }
 
 function isNumeric(n) {
