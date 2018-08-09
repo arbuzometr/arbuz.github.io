@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="js-mass">Введите фактический вес арбуза</label>
-                    <input type="number" id="js-mass" class="form-input" name="mass" step="0.1"  min="0"/>
+                    <input type="number" id="js-mass" class="form-input" name="mass" step="0.1" min="0" />
                     <span class="measure">кг</span>
                 </div>
                 <div class="text-center">
@@ -75,10 +75,18 @@
                     <div class="visual__gradient"></div>
                     <input type="range" min="80" max="120" disabled="" value="" class="visual__slider" id="js-ripeness-range">
                 </div>
-              <!--  -->
+                
             </section>
         </main>
-        <footer class="footer">*<a href="calculations.html" class="font-small">рассчеты и дневник наблюдений</a></footer>
+        <footer class="footer">
+            <div class="footer__col">
+                <p>*<a href="calculations.html" class="font-small">рассчеты и дневник наблюдений</a></p>
+                
+            </div>
+            <div class="footer__col text-right">
+                <p>email: <a href="mailto:overveg@gmail.com">overveg@gmail.com</a></p>
+            </div>
+        </footer>
     </div>
     <script src="js/main.js"></script>
 </body>

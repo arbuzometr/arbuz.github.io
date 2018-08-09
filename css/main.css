@@ -1,23 +1,20 @@
 /*! HTML5 Boilerplate v6.1.0 | MIT License | https://html5boilerplate.com/ */
 
-
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300&subset=cyrillic');
 html {
     color: #000;
-    font: 17px/1.4 'Open Sans Condensed', 'Trebuchet MS','Lucida Sans Unicode', Tahoma, sans-serif;
+    font: 17px/1.4 'Open Sans Condensed', 'Trebuchet MS', 'Lucida Sans Unicode', Tahoma, sans-serif;
 }
-
-
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -28,17 +25,14 @@ html {
  * Customize the background color to match your design.
  */
 
- ::-moz-selection {
+::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-
 ::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
-
-
 /*
  * A better looking default horizontal rule
  */
@@ -51,24 +45,15 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
-
-
 /*
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
 
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
-
-
 /*
  * Remove default fieldset styles.
  */
@@ -78,8 +63,6 @@ fieldset {
     margin: 0;
     padding: 0;
 }
-
-
 /*
  * Allow only vertical resizing of textareas.
  */
@@ -87,8 +70,6 @@ fieldset {
 textarea {
     resize: vertical;
 }
-
-
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
@@ -99,16 +80,11 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
-
-
-
-
 /* ==========================================================================
    Custom styles
    ========================================================================== */
 
-html,
-body {
+html, body {
     height: 100%;
     padding: 0;
     margin: 0;
@@ -117,41 +93,35 @@ body {
     background-color: #FFB686;
     line-height: 1.4;
 }
-
 .text-center {
     text-align: center;
 }
-
+.text-right {
+    text-align: right;
+}
 .text-left {
     text-align: left;
 }
-
 ul li {
     list-style: none;
 }
-
 ul li:before {
     content: "\2014\a0";
     float: left;
     margin-left: -1.2em;
 }
-
 a {
     color: #000;
 }
-
-a:hover,
-a:active {
+a:hover, a:active {
     text-decoration: none;
 }
-
 .font-small {
     font-size: 1rem;
 }
 .font-large {
     font-size: 1.2rem;
 }
-
 blockquote {
     border: 1px solid black;
     padding: 5%;
@@ -159,7 +129,6 @@ blockquote {
     font-size: .8em;
     text-align: center;
 }
-
 @media (min-width: 650px) {
     blockquote {
         padding: 3%;
@@ -169,61 +138,48 @@ blockquote {
         box-sizing: border-box;
     }
 }
-
-
-
 /*  */
-
-
 
 .layout {
     padding: 0 5%;
     max-width: 600px;
     margin: 0 auto;
 }
-
 @media (min-width:650px) {
     .layout {
         padding: 0 15%;
     }
 }
-
 .bg {
     /*background-image: linear-gradient(45deg, #F3E02A, #E8B305);*/
     background-color: #F3E02A;
     height: 30px;
 }
-
 .bg::before {
     content: '';
     display: block;
     height: 30px;
     background: url(../img/meter.png) repeat-x 0 0;
 }
-
-
 /* Header */
 
 .header {
     margin-bottom: 3em;
 }
-
 .logo {
     display: block;
     font-size: 4.375rem;
-    font-family: 'Amatic SC', 'Trebuchet MS','Lucida Sans Unicode', Tahoma, sans-serif;
+    font-family: 'Amatic SC', 'Trebuchet MS', 'Lucida Sans Unicode', Tahoma, sans-serif;
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
     text-decoration: none;
 }
-
 .tagline {
     font-size: 1.3rem;
     text-align: center;
 }
-
 .icon-melon {
     display: inline-block;
     width: 45px;
@@ -234,7 +190,6 @@ blockquote {
     border-radius: 45px;
     margin-right: 10px;
 }
-
 .icon-melon::before {
     content: "";
     position: absolute;
@@ -247,9 +202,7 @@ blockquote {
     z-index: -1;
 }
 
-
 /* Content */
-
 section {
     margin-bottom: 4em;
 }
@@ -259,42 +212,36 @@ section {
 .form-group {
     margin-bottom: 1em;
 }
-
 .form-group_flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 .form-group_flex__col {
     margin-top: 1em;
 }
-
 .form-group_flex__col:nth-of-type(2) {
     margin-left: 5px;
 }
-
 .form-label-wrap {
     width: calc(100% - 34px);
-         -webkit-box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
 }
-
 .form-label {
     display: block;
     margin-bottom: .6em;
     font-weight: bold;
 }
-
 @media screen and (max-width: 509px) {
     .form-label_melonweight {
         margin-top: 1em;
     }
 }
-
 .form-input {
     width: calc(100% - 34px);
     border: 0;
@@ -302,14 +249,12 @@ section {
     font-size: 2.375em;
     font-weight: bold;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     text-align: center;
 }
-
 .measure {
     font-size: 1.4em;
 }
-
 .icon-circ {
     display: inline-block;
     margin: 0 auto;
@@ -319,18 +264,16 @@ section {
     border-radius: 40px;
     position: relative;
 }
-
 .icon-circ::before {
     content: '';
     display: block;
     position: absolute;
 }
-
 .icon-circ_horizontal::before {
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     width: 40px;
     height: 10px;
     border-bottom: 2px dashed black;
@@ -340,12 +283,11 @@ section {
     border-bottom-left-radius: 40px 15px;
     border-bottom-right-radius: 40px 15px;
 }
-
 .icon-circ_vertical::before {
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     height: 40px;
     width: 10px;
     border-right: 2px dashed black;
@@ -355,13 +297,22 @@ section {
     border-bottom-left-radius: 15px 40px;
     border-bottom-right-radius: 15px 40px;
 }
-
 .ripeness-percent {
-    font-size: 1.6rem;
+    font-size: 2.3rem;
     font-weight: bold;
 }
 .visual {
-    margin: 2em 0;
+    margin: 2em 0 0;
+    transform: scale(.6);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.visual[data-animate=zoom-in] {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+    transition-timing-function: cubic-bezier(.175, .885, .32, 1.275);
+    transition-duration: .3s;
+    transition-property: opacity, transform;
 }
 .visual__marks {
     display: -webkit-box;
@@ -373,7 +324,7 @@ section {
     font-weight: bold;
 }
 .visual__gradient {
-    width: 100%; 
+    width: 100%;
     height: 30px;
     background: -webkit-linear-gradient(left, #DEE5A5, #FED3A2 32%, #FE583F 53%, #E70003 75%, #420200);
     background: -o-linear-gradient(left, #DEE5A5, #FED3A2 32%, #FE583F 53%, #E70003 75%, #420200);
@@ -381,13 +332,13 @@ section {
     background: linear-gradient(to right, #DEE5A5, #FED3A2 32%, #FE583F 53%, #E70003 75%, #420200);
 }
 .visual__slider {
-    -webkit-appearance: none;  
-    -moz-appearance: none;  
-         appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: transparent;
     color: transparent;
     overflow: visible;
-    width: 100%; 
+    width: 100%;
     height: 35px;
     margin: 0;
     padding: 0;
@@ -397,7 +348,7 @@ section {
 input[type=range]::-ms-track {
     appearance: none;
     overflow: visible;
-    width: 100%; 
+    width: 100%;
     height: 35px;
     margin: 0;
     padding: 0;
@@ -408,13 +359,9 @@ input[type=range]::-ms-track {
     border-width: 6px 0;
     color: transparent;
 }
-input[type=range]::-ms-fill-lower,
-input[type=range]::-ms-fill-upper,
-input[type=range]:focus::-ms-fill-lower,
-input[type=range]:focus::-ms-fill-upper{
+input[type=range]::-ms-fill-lower, input[type=range]::-ms-fill-upper, input[type=range]:focus::-ms-fill-lower, input[type=range]:focus::-ms-fill-upper {
     background: #FFB686;
 }
-
 .visual__slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -423,9 +370,8 @@ input[type=range]:focus::-ms-fill-upper{
     background: #000;
     border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
     -webkit-transform: rotateZ(-45deg);
-            transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
 }
-
 .visual__slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
@@ -439,39 +385,70 @@ input[type=range]:focus::-ms-fill-upper{
     background: #000;
     border-radius: 80% 5px 55% 50% / 55% 5px 80% 50%;
     -ms-transform: rotate(-45deg);
-        transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
 }
 
+/* Other */
+.other__heading {
+    border-bottom: 1px dashed #000;
+    cursor: pointer;
+}
+.other__content {
+    /*border: 1px solid black;*/
+    padding: 15px 0;
+    transition: all .5s;
+}
+.ut-article-img {
+    width: 100%;
+    height: auto;
+}
+.formula {
+    display: flex;
+    margin-bottom: 1em;
+}
+.formula__determination {
+     border-right: 4px solid green;
+     min-width: 100px;
+     padding: .5em 1em;
+}
+.formula__result {
+     padding: .5em 1em;
+}
+.formula__result-index {
+     font-weight: bold;
+     font-size: 1em;
+}
 
 /* Calculations page */
+
 .table-wrap {
     width: 100%;
     overflow-x: auto;
 }
-
-.table,
-.table th,
-.table td {
+.table, .table th, .table td {
     border: 1px solid black;
     border-collapse: collapse;
 }
-
 .table td {
     padding: 3px;
 }
 .table td:last-child {
     text-align: left;
 }
-
 /* Footer */
+
 .footer {
     padding: 20px 0;
 }
-
-
+.footer__col {
+float: left;
+width: 50%;
+box-sizing: border-box;    
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 /*
  * Hide visually and from screen readers
  */
@@ -479,8 +456,6 @@ input[type=range]:focus::-ms-fill-upper{
 .hidden {
     display: none !important;
 }
-
-
 /*
  * Hide only visually, but have it available for screen readers:
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
@@ -502,15 +477,13 @@ input[type=range]:focus::-ms-fill-upper{
     white-space: nowrap;
     /* 1 */
 }
-
 /*
  * Extends the .visuallyhidden class to allow the element
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -519,7 +492,6 @@ input[type=range]:focus::-ms-fill-upper{
     width: auto;
     white-space: inherit;
 }
-
 /*
  * Hide visually and from screen readers, but maintain layout
  */
@@ -527,67 +499,52 @@ input[type=range]:focus::-ms-fill-upper{
 .invisible {
     visibility: hidden;
 }
-
 /*
  * Clearfix: contain floats
  */
 
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
     content: " ";
     display: table;
 }
-
 .clearfix:after {
     clear: both;
 }
-
 /* ==========================================================================
    Print styles.
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
+    *, *:before, *:after {
         background: transparent !important;
         color: #000 !important;
         -webkit-box-shadow: none !important;
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
+    a[href^="#"]:after, a[href^="javascript:"]:after {
         content: "";
     }
-
     pre {
         white-space: pre-wrap !important;
     }
-    pre,
-    blockquote {
+    pre, blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     /*
      * Printing Tables:
      * http://css-discuss.incutio.com/wiki/Printing_Tables
@@ -595,21 +552,14 @@ input[type=range]:focus::-ms-fill-upper{
     thead {
         display: table-header-group;
     }
-
-    tr,
-    img {
+    tr, img {
         page-break-inside: avoid;
     }
-
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
-
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
     .form-input {
