@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body class="page-inner">
     <!--[if lte IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
       <![endif]-->
@@ -33,13 +33,14 @@
                     <footer>где m &mdash; вес, L &mdash; длина окружности</footer>
                 </blockquote>
                 <h2>Таблица наблюдений</h2>
+                <div class="table-responsive">   
                 <table class="table font-small text-center">
                     <tr>
                         <th>Дата</th>
-                        <th>Средн. обхват, см</th>
-                        <th>Рассч. вес, кг</th>
-                        <th>Факт. вес, кг</th>
-                        <th>Индекс спелости формула №1</th>
+                        <th>Обхват (средний), см</th>
+                        <th>Вес, формула#1, кг</th>
+                        <th>Вес, факт, кг</th>
+                        <th>Индекс спелости формула#1</th>
                         <th>Результаты</th>
                     </tr>
                     <tr>
@@ -48,7 +49,7 @@
                         <td>9.034</td>
                         <td>9.067</td>
                         <td>100%</td>
-                        <td>Спелый, сочный, не сахаристый</td>
+                        <td>Спелый, сочный, не сахаристый, 10/10</td>
                     </tr>
                     <tr>
                         <td>30 июля</td>
@@ -83,8 +84,7 @@
                         <td>Спелый, сладкий, тонкая корка</td>
                     </tr>
                     <tr>
-                        <td>9 авг. дыня
-                        </td>
+                        <td>9 авг. дыня</td>
                         <td>71.25</td>
                         <td>6.149</td>
                         <td>5.206</td>
@@ -93,6 +93,7 @@
                         </td>
                     </tr>
                 </table>
+            </div>
                 <p><b>Формула №2</b></p>
                 <p>Зная вес, рассчитаем идеальный обхват арбуза стопроцентной спелости:</p>
                 <blockquote>L > 4.1*∛m
