@@ -1,21 +1,21 @@
 addEvent('load', window, countMelonByCirc);
 
-var circHor = document.querySelector('#js-circumference-horizontal');
+var circHor = document.getElementById('js-circumference-horizontal');
 addEvent('change', circHor, countMelonByCirc);
 addEvent('keyup', circHor, countMelonByCirc);
 
-var circVer = document.querySelector('#js-circumference-vertical');
+var circVer = document.getElementById('js-circumference-vertical');
 addEvent('change', circVer, countMelonByCirc);
 addEvent('keyup', circVer, countMelonByCirc);
 
-var m = document.querySelector('#js-mass');
+var m = document.getElementById('js-mass');
 addEvent('change', m, countMelonByCirc);
 addEvent('keyup', m, countMelonByCirc);
 
 function countMelonByCirc() {
-    var cHorizontal = Number(document.querySelector('#js-circumference-horizontal').value);
-    var cVertical = Number(document.querySelector('#js-circumference-vertical').value);
-    var mass = Number(document.querySelector('#js-mass').value);
+    var cHorizontal = Number(document.getElementById('js-circumference-horizontal').value);
+    var cVertical = Number(document.getElementById('js-circumference-vertical').value);
+    var mass = Number(document.getElementById('js-mass').value);
 
     /* count average circumference */
     var circumference = 0;
@@ -27,20 +27,22 @@ function countMelonByCirc() {
 
     if (circumference !== 0) {
 
+        /*show ideal weight*/
         var idealMass = getIdealMass(circumference);
 
-        document.querySelector('#js-ideal-mass').value = idealMass;
-        document.querySelector('#js-ideal-mass-max').innerHTML = 'Если реальный вес арбуза меньше <b>' +
+        document.getElementById('js-ideal-mass').value = idealMass;
+        document.getElementById('js-ideal-mass-max').innerHTML = 'Если реальный вес арбуза меньше <b>' +
             getIdealMassMax(idealMass) + 'кг</b>, то скорее всего он переспел';
 
+        /*get ripeness*/
         var ripenessPercent = getRipenessByCircumferencePercent(mass, idealMass);
 
         if (mass !== 0 && isNumeric(ripenessPercent)) {
 
-            document.querySelector('#js-ripeness-percent').innerHTML = 'Индекс спелости: ' + ripenessPercent + '%';
-            document.querySelector('#js-ripeness-range').value = ripenessPercent;
+            document.getElementById('js-ripeness-percent').innerHTML = 'Индекс спелости: ' + ripenessPercent + '%';
+            document.getElementById('js-ripeness-range').value = ripenessPercent;
 
-            /* show visual */
+            /* show visual chart */
             var visual = document.querySelector('.visual');
 
             if (visual.classList.contains('invisible')) {
