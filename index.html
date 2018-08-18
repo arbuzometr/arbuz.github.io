@@ -24,15 +24,18 @@
             <div class="tagline">определяем спелость арбуза по обхвату и весу</div>
         </header>
         <main>
-            <section>
-                <p><b>Введите длину окружности:</b></p>
+            <section class="form">
+                <fieldset>
+    <legend>ВВЕДИТЕ ДЛИНУ ОКРУЖНОСТИ</legend>
                 <div class="form-group form-group_flex">
+
+
                     <div class="form-group_flex__col">
                         <div class="form-label-wrap">
                             <i class="icon-circ icon-circ_horizontal"></i>
                             <label class="form-label" for="js-circumference-horizontal">по горизонтали</label>
                         </div>
-                        <input type="number" id="js-circumference-horizontal" class="form-input" name="circumference-horizontal" value="" min="0" step="1" />
+                        <input type="number" autofocus="" id="js-circumference-horizontal" class="form-input" name="circumference-horizontal" value="" min="0" step="1" />
                         <span class="measure">см</span>
                     </div>
                     <div class="form-group_flex__col">
@@ -44,16 +47,17 @@
                         <span class="measure">см</span>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="form-label" for="js-ideal-mass">Спелый арбуз должен весить менее</label>
-                    <input type="text" disabled="" id="js-ideal-mass" class="form-input" name="ideal-mass" />
+            </fieldset>
+                <div class="form-group text-center">
+                    <label class="form-label" for="js-ideal-mass">Арбуз считается спелым, если его вес меньше</label><br>
+                    <span id="js-ideal-mass" class="result-mass"></span>
                     <span class="measure">кг</span>
                     <div>
                         <span id="js-ideal-mass-max"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="js-mass">Введите фактический вес арбуза</label>
+                    <label class="form-label" for="js-mass">ВВЕДИТЕ ФАКТИЧЕСКИЙ ВЕС</label>
                     <input type="number" id="js-mass" class="form-input" name="mass" step="0.1" min="0" />
                     <span class="measure">кг</span>
                 </div>

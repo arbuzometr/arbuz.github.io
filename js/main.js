@@ -30,7 +30,7 @@ function countMelonByCirc() {
         /*show ideal weight*/
         var idealMass = getIdealMass(circumference);
 
-        document.getElementById('js-ideal-mass').value = idealMass;
+        document.getElementById('js-ideal-mass').innerHTML = idealMass;
         document.getElementById('js-ideal-mass-max').innerHTML = 'Если реальный вес арбуза меньше <b>' +
             getIdealMassMax(idealMass) + 'кг</b>, то скорее всего он переспел';
 
@@ -68,7 +68,7 @@ function getIdealMass(circumference) {
 }
 
 function getIdealMassMax(m) {
-    return (m * 0.9).toFixed(3);
+    return (m * 0.8).toFixed(3);
 }
 
 function getRipenessByCircumferencePercent(m, idealm) {
