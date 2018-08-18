@@ -27,12 +27,10 @@ function countMelonByCirc() {
 
     if (circumference !== 0) {
 
-        /*show ideal weight*/
-        var idealMass = getIdealMass(circumference);
+        /*show ideal weight m=L^3*0.017*/
+        var idealMass = (Math.pow(circumference, 3) * 0.017 / 1000).toFixed(3);
 
         document.getElementById('js-ideal-mass').innerHTML = idealMass;
-        document.getElementById('js-ideal-mass-max').innerHTML = 'Если реальный вес арбуза меньше <b>' +
-            getIdealMassMax(idealMass) + 'кг</b>, то скорее всего он переспел';
 
         /*get ripeness*/
         var ripenessPercent = getRipenessByCircumferencePercent(mass, idealMass);
@@ -61,14 +59,6 @@ function addEvent(evnt, elem, func) {
     } else {
         elem[evnt] = func;
     }
-}
-// m=L^3*0.017
-function getIdealMass(circumference) {
-    return (Math.pow(circumference, 3) * 0.017 / 1000).toFixed(3);
-}
-
-function getIdealMassMax(m) {
-    return (m * 0.8).toFixed(3);
 }
 
 function getRipenessByCircumferencePercent(m, idealm) {

@@ -10,7 +10,7 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Open+Sans+Condensed:300|Roboto&subset=cyrillic');
 html {
     color: #000;
     font: 17px/1.4 'Open Sans Condensed', 'Trebuchet MS', 'Lucida Sans Unicode', Tahoma, sans-serif;
@@ -55,13 +55,6 @@ audio, canvas, iframe, img, svg, video {
     vertical-align: middle;
 }
 
-fieldset {
-    border: 0;
-    background-color: rgba(255,255,255,0.2);
-}
-legend {
-    font-weight: bold;
-}
 
 /*
  * Allow only vertical resizing of textareas.
@@ -85,7 +78,7 @@ textarea {
    ========================================================================== */
 
 html, body {
-    height: 100%;
+    /*height: 100%;*/
     padding: 0;
     margin: 0;
 }
@@ -122,28 +115,32 @@ a:hover, a:active {
 .font-large {
     font-size: 1.2rem;
 }
+.font-xlarge {
+    font-size: 1.4rem;
+}
 
 /*  */
 
 .layout {
     padding: 0 5%;
-    max-width: 600px;
+    max-width: 400px;
     margin: 0 auto;
 }
-@media (min-width:650px) {
+/*@media (min-width:650px) {
     .layout {
         padding: 0 15%;
     }
-}
+}*/
 .page-inner .layout {
     max-width: 800px;
 }
 
-.bg {
-    background-color: #F3E02A;
+.ruler {
+    background-image: linear-gradient(90deg, #DEE5A5, #FED3A2, #FE583F, #E70003);
     height: 30px;
+    opacity: 0.7;
 }
-.bg::before {
+.ruler::before {
     content: '';
     display: block;
     height: 30px;
@@ -152,7 +149,12 @@ a:hover, a:active {
 
 /* Header */
 .header {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
+}
+@media screen and (min-width:555px){
+    .header {
+        margin-bottom: 5em;
+    }
 }
 .logo {
     display: block;
@@ -165,7 +167,6 @@ a:hover, a:active {
     text-decoration: none;
 }
 .tagline {
-    font-size: 1.3rem;
     text-align: center;
 }
 .icon-melon {
@@ -194,22 +195,43 @@ a:hover, a:active {
 .calculations {
     font-size: 1.4rem;
 }
-.form-group {
-    margin-bottom: 1em;
+
+/* Form */
+.form {
+    counter-reset: steps-counter;
 }
-.form-group_flex {
+.form fieldset {
+    position: relative;
+    border: 2px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.2);
+    padding: 2em 0.75em 1em;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+.form fieldset::before {
+    counter-increment: steps-counter;
+    content: "0" counter(steps-counter);
+    position: absolute;
+    top: -55px;
+    left: 0;
+    color:rgba(255,255,255,0.2);
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 90px; 
+    pointer-events: none;
+}
+.form legend {
+    font-weight: bold;
+}
+.flex {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
 }
-.form-group_flex__col {
-    margin-top: 1em;
-}
-.form-group_flex__col:nth-of-type(2) {
-    margin-left: 5px;
+.flex-center{
+     justify-content: center;
 }
 .form-label-wrap {
     width: calc(100% - 34px);
@@ -222,14 +244,11 @@ a:hover, a:active {
     margin-bottom: .6em;
     font-weight: bold;
 }
-@media screen and (max-width: 509px) {
-    .form-label_melonweight {
-        margin-top: 1em;
-    }
-}
 .form-input {
     width: calc(100% - 34px);
+    min-width: 60px;
     border: 0;
+    border-radius: 3px;
     padding: 10px 10px;
     font-size: 2.375em;
     font-weight: bold;
@@ -237,11 +256,13 @@ a:hover, a:active {
     box-sizing: border-box;
     text-align: center;
 }
-.measure {
-    font-size: 1.4em;
-}
 .result-mass {
-    
+    border: 2px dashed rgba(255,255,255,0.4);
+    font-size: 2.375em;
+    min-width: 120px;
+    min-height: 58px;
+    display: inline-block;
+    padding: 0 10px;
 }
 .icon-circ {
     display: inline-block;
@@ -429,14 +450,7 @@ table {
 .table td:last-child {
     text-align: left;
 }
-/* Footer */
 
-.footer {}
-.footer__col {
-float: left;
-width: 50%;
-box-sizing: border-box;    
-}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
