@@ -13,24 +13,25 @@ addEvent('change', m, countMelonByCirc);
 addEvent('keyup', m, countMelonByCirc);
 
 function countMelonByCirc() {
-    var cHorizontal = Number(document.getElementById('js-circumference-horizontal').value);
-    var cVertical = Number(document.getElementById('js-circumference-vertical').value);
+    var ch = Number(document.getElementById('js-circumference-horizontal').value);
+    var cv = Number(document.getElementById('js-circumference-vertical').value);
     var mass = Number(document.getElementById('js-mass').value);
 
     /* count average circumference */
     var circumference = 0;
-    if (cHorizontal !== 0 && isNumeric(cHorizontal) && cVertical !== 0 && isNumeric(cVertical)) {
-        circumference = (cHorizontal + cVertical) / 2;
-    } else if (cHorizontal !== 0 && isNumeric(cHorizontal)) {
-        circumference = cHorizontal;
+    if (ch !== 0 && isNumeric(ch) && cv !== 0 && isNumeric(cv)) {
+        circumference = (ch + cv) / 2;
+    } else if (ch !== 0 && isNumeric(ch)) {
+        circumference = ch;
     }
 
     if (circumference !== 0) {
 
-        /*show ideal weight m=L^3*0.017*/
+        /*show ideal mass m=L^3*0.017*/
         var idealMass = (Math.pow(circumference, 3) * 0.017 / 1000).toFixed(3);
 
-        document.getElementById('js-ideal-mass').innerHTML = idealMass;
+        var im = document.getElementById('js-ideal-mass');
+        im.innerHTML = idealMass;
 
         /*get ripeness*/
         var ripenessPercent = getRipenessByCircumferencePercent(mass, idealMass);
@@ -43,12 +44,19 @@ function countMelonByCirc() {
             /* show visual chart */
             var visual = document.querySelector('.visual');
 
-            if (visual.classList.contains('invisible')) {
+
+            if (visual.classList) {
                 visual.classList.remove('invisible');
-                visual.setAttribute('data-animate', 'zoom-in');;
+            } else {
+                visual.className = visual.className.replace(new RegExp('(^|\\b)' + 'invisible'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
             }
         }
     }
+}
+
+function getRipenessByCircumferencePercent(m, idealm) {
+    var percent = Math.round(100 - (m - idealm) / (idealm / 100));
+    return percent > 0 ? percent : 0;
 }
 
 function addEvent(evnt, elem, func) {
@@ -59,11 +67,6 @@ function addEvent(evnt, elem, func) {
     } else {
         elem[evnt] = func;
     }
-}
-
-function getRipenessByCircumferencePercent(m, idealm) {
-    var percent = Math.round(100 - (m - idealm) / (idealm / 100));
-    return percent > 0 ? percent : 0;
 }
 
 function isNumeric(n) {

@@ -203,11 +203,11 @@ a:hover, a:active {
     background-color: rgba(255,255,255,0.2);
     padding: 2em 0.75em 1em;
     border-radius: 8px;
-    margin-top: 30px;
+    margin-top: 26px;
 }
 .form fieldset::before {
     counter-increment: steps-counter;
-    content: "0" counter(steps-counter);
+    content: counter(steps-counter);
     position: absolute;
     top: -55px;
     left: 0;
@@ -219,6 +219,7 @@ a:hover, a:active {
 }
 .form legend {
     font-weight: bold;
+    padding-left: 40px;
 }
 .flex {
     display: -webkit-box;
@@ -255,14 +256,7 @@ a:hover, a:active {
     box-sizing: border-box;
     text-align: center;
 }
-.result-mass {
-    border: 2px dashed rgba(255,255,255,0.4);
-    font-size: 2.375em;
-    min-width: 120px;
-    min-height: 58px;
-    display: inline-block;
-    padding: 0 10px;
-}
+
 .icon-circ {
     display: inline-block;
     margin: 0 auto;
@@ -305,6 +299,23 @@ a:hover, a:active {
     border-bottom-left-radius: 15px 40px;
     border-bottom-right-radius: 15px 40px;
 }
+
+.result-mass {
+    display: inline-block;
+    min-width: 120px;
+    min-height: 58px;
+    font-size: 2.375em;
+    border: 2px dashed rgba(255,255,255,0.4);
+    vertical-align: middle;
+}
+
+.input-container{
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+/*Ripeness*/
 .ripeness-percent {
     font-size: 2.3rem;
     font-weight: bold;
